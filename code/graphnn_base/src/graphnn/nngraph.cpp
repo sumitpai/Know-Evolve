@@ -2,7 +2,8 @@
 #include <cstring>
 #include "param_layer.h"
 #include "i_criterion_layer.h"
-
+#include "cppformat/format.h"
+#include "cppformat/printf.h"
 template<MatMode mode, typename Dtype>
 void NNGraph<mode, Dtype>::FeedForward(std::map<std::string, IMatrix<mode, Dtype>* > input, Phase phase)
 {

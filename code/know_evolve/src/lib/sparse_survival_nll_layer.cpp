@@ -48,7 +48,7 @@ void SparseSurvivalNllLayer<mode, Dtype>::UpdateOutput(std::vector< ILayer<mode,
     	cur_state.Resize(1, bg->edge_list.size());
     	auto& cur_rel_weight = R->p["weight"]->value;
 
-    	#pragma omp parallel for
+    	//#pragma omp parallel for
     	for (size_t i = 0; i < bg->edge_list.size(); ++i)
     	{
     		int subject = bg->edge_list[i].first;
@@ -75,7 +75,7 @@ void SparseSurvivalNllLayer<mode, Dtype>::UpdateOutput(std::vector< ILayer<mode,
     	auto& batch_object_list = bg->entity_list;
     	subj_centric.Resize(1, batch_object_list.size());
 	
-	#pragma omp parallel for
+	//#pragma omp parallel for
     	for (size_t i=0; i < batch_object_list.size(); ++i)
     	{
     		int object = batch_object_list[i];
@@ -96,7 +96,7 @@ void SparseSurvivalNllLayer<mode, Dtype>::UpdateOutput(std::vector< ILayer<mode,
     	Dtype dup = 0; //discard duplicate calculation for subject-object edge
     	auto& batch_subject_list = bg->entity_list;
     	obj_centric.Resize(1, batch_subject_list.size());
-	#pragma omp parallel for
+	//#pragma omp parallel for
     	for (size_t i=0; i < batch_subject_list.size(); ++i)
     	{
     		int subject = batch_subject_list[i];

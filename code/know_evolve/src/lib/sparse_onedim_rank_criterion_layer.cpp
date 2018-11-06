@@ -53,7 +53,7 @@ void SparseOnedimRankCriterionLayer<mode, Dtype>::UpdateOutput(std::vector< ILay
 		C.GeMM(B,operands[bg->entity_idx[object]]->state->DenseDerived(),Trans::N, Trans::T, 1.0, 0.0);
 		Dtype sim = C.data[0]; 
 		sim = LogLL(sim, this->event_t - this->cur_time.GetCurTime(subject, object));
-		#pragma omp parallel for
+		//#pragma omp parallel for
 		for (size_t i = 0; i < bg->entity_list.size(); ++i)
 		{
 			int pred_object = bg->entity_list[i];

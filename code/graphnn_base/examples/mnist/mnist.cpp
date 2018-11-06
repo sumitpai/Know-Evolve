@@ -159,7 +159,7 @@ int main(const int argc, const char** argv)
         }
         loss /= labels_test.size();
         err_rate /= labels_test.size();
-        std::cerr << fmt::sprintf("test loss: %.4f\t error rate: %.4f", loss, err_rate) << std::endl;
+        std::cerr << fmt::printf("test loss: %.4f\t error rate: %.4f", loss, err_rate) << std::endl;
         
         for (unsigned i = 0; i < labels_train.size(); i += batch_size)
         {

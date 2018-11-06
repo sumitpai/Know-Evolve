@@ -664,8 +664,7 @@ void MainLoop()
 		gnn.FeedForward(inputs, TRAIN);
 		auto loss_map = gnn.GetLoss();
 
-
-    		if (cfg::iter % cfg::report_interval == 0)
+    		if (cfg::iter % 10 == 0)
 		{		
 			Dtype nll = 0.0, avg_rank = 0.0, mae = 0.0, rmse = 0.0;
 			for (auto it = loss_map.begin(); it != loss_map.end(); ++it)

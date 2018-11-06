@@ -4,6 +4,7 @@
 #include "i_layer.h"
 #include "i_param.h"
 #include "cppformat/format.h"
+#include "cppformat/printf.h"
 #include <vector>
 
 template<MatMode mode, typename Dtype>
